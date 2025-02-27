@@ -2,7 +2,7 @@ name: Daily Warframe Reset
 
 on:
   schedule:
-    - cron: "41 15 * * *" # Runs at 00:00 UTC daily
+    - cron: "46 17 * * *" # Runs at 00:00 UTC daily
 
 jobs:
   run-script:
