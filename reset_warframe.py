@@ -1,25 +1,8 @@
-name: Daily Warframe Reset
+import time
+from datetime import datetime, timezone
 
-on:
-  schedule:
-    - cron: "15 * * * *"  # Runs at 00:00 UTC daily
+def log_success():
+    now_utc = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+    print(f"✅ Script executed successfully at {now_utc} UTC.")
 
-jobs:
-  run-script:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.8'  # Use the Python version you prefer
-
-      - name: Install dependencies (if needed)
-        run: |
-          # If you have any dependencies, uncomment and add them
-          # pip install -r requirements.txt
-
-      - name: Run script
-        run: python reset_warframe.py  # Run your script
+log_success()
